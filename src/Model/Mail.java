@@ -20,7 +20,7 @@ public class Mail {
     }
     
     public String getDomain(){
-        String regex = "@([[a-zA-Z].]+.[a-zA-Z]+)";
+        String regex = "@([[a-zA-Z]{2}.]+).*[a-zA-Z]+";
         Pattern pat = Pattern.compile(regex);
         Matcher a = pat.matcher(mail);
         String toRet = "";

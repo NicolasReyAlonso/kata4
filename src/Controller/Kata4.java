@@ -17,17 +17,31 @@ import java.util.List;
  * @author nicolasreyalonso
  */
 public class Kata4 {
-
+private static String fileName = "/Users/nicolasreyalonso/NetBeansProjects/kata4/email.txt";
+private static List <Mail> a;
+private static Histogram<String> b;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        String fileName = "/Users/nicolasreyalonso/NetBeansProjects/kata4/email.txt";
-        List <Mail> a = MailListReader.read(fileName); 
-        Histogram<String> b = MailHistogramBuilder.build(a);
+        execute();
+        
+        
+    }
+    public static void execute(){
+    input();
+    process();
+    output();
+    }
+    public static void input(){
+        a = MailListReader.read(fileName); 
+    }
+    public static void process(){
+        b = MailHistogramBuilder.build(a);
+    }
+    public static void output(){
         HistogramDisplay hist = new HistogramDisplay(b);
         hist.execute();
     }
-    
 }

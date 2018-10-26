@@ -25,9 +25,9 @@ public class MailListReader{
         String c = "";
         while(a.hasNextLine()){
             c = a.nextLine();
-            //if(!c.equals("")){
+            if(!c.equals("")){
                 toRet.add(new Mail(c));
-            //}
+            }
         }
         
         }catch(Exception e){
